@@ -50,6 +50,7 @@ const MyForm = () => {
           defaultValue=""
           name="phone_mask"
           label="Phone"
+          type="tel"
         />
 
         <Button variant="primary" type="submit">

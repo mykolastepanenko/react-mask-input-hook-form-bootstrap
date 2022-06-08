@@ -11,6 +11,7 @@ const MyInputMask = ({
   defaultValue,
   name,
   label,
+  type,
 }) => {
   return (
     <Controller
@@ -21,12 +22,9 @@ const MyInputMask = ({
       render={({ field, formState: { errors } }) => (
         <Form.Group className="mb-3" controlId={field.name}>
           <Form.Label>{label}</Form.Label>
-          <InputMask
-            {...field}
-            mask={mask}
-            className="form-control"
-            placeholder={placeholder}
-          />
+          <InputMask {...field} mask={mask}>
+            {() => <Form.Control type={type} placeholder={placeholder} />}
+          </InputMask>
           <ErrorMessage
             errors={errors}
             name={field.name}
